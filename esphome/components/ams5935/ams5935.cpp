@@ -43,7 +43,7 @@ int Ams5935::read_bytes_(uint32_t *pressure_counts, uint32_t *temperature_counts
     uint8_t read_request_data[1];
     read_request_data[0] = read_request_command;
     ESP_LOGV(TAG, "Writing I2C data: 0x%02X", read_request_data[0]);
-    i2c::ErrorCode write_err = this->write(read_request_data, 1, true);
+    i2c::ErrorCode write_err = this->write(read_request_data, 1);
     if (write_err) {
       ESP_LOGE(TAG, "Error sending measurment request data :%d", write_err);
     }
