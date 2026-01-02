@@ -28,7 +28,7 @@ int Ams5935::read_bytes_(uint32_t *pressure_counts, uint32_t *temperature_counts
   static uint64_t read_request_time = 0;
   static bool read_requested = false;
   const uint64_t now = millis();
-  uint8_t read_delay;
+  uint16_t read_delay; 
   uint8_t read_request_command;
 
   if (this->oversampling_) {
